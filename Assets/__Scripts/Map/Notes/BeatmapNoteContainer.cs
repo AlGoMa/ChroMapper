@@ -95,8 +95,8 @@ public class BeatmapNoteContainer : BeatmapObjectContainer
         simpleBlock.SetActive(!b && Settings.Instance.SimpleBlocks);
         complexBlock.SetActive(!b && !Settings.Instance.SimpleBlocks);
 
-        bombRenderer.gameObject.SetActive(b);
-        bombRenderer.enabled = b;
+        bombRenderer.gameObject.SetActive(false);
+        bombRenderer.enabled = false;
     }
 
     public void SetArcVisible(bool showArcVisualizer)

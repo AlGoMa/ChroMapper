@@ -63,7 +63,7 @@ public class NoteAppearanceSO : ScriptableObject
                     note.SetColor(RedColor);
                     break;
                 case BeatmapNote.NoteTypeB:
-                    note.SetColor(BlueColor);
+                    note.SetColor(RedColor);
                     break;
                 default:
                     note.SetColor(null);

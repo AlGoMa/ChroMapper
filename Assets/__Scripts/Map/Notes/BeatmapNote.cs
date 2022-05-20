@@ -80,7 +80,7 @@ public class BeatmapNote : BeatmapObject, IBeatmapObjectBounds
         node["_time"] = Math.Round(Time, DecimalPrecision);
         node["_lineIndex"] = LineIndex;
         node["_lineLayer"] = LineLayer;
-        node["_type"] = CutDirection < 8 ? 2 : 1;
+        node["_type"] = CutDirection < 8 ? 2 : 0;
         node["_cutDirection"] = CutDirection;
         node["_duration"] = 0; 
         node["_width"] = 0;

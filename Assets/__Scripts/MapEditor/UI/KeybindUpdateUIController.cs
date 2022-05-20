@@ -69,7 +69,7 @@ public class KeybindUpdateUIController : MonoBehaviour, CMInput.IWorkflowsAction
     public void OnPlaceBlueNoteorEvent(InputAction.CallbackContext context)
     {
         if (!context.performed) return;
-        blueToggle.onValueChanged.Invoke(true);
+        redToggle.onValueChanged.Invoke(true);
         placeMode.SetMode(PlacementModeController.PlacementMode.Note);
     }
 

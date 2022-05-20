@@ -37,7 +37,7 @@ public class BeatmapObstacle : BeatmapObject, IBeatmapObjectBounds
         LineIndex = lineIndex;
         Type = type;
         Duration = duration;
-        Width = width;
+        Width = 1;
         CustomData = customData;
     }
 
