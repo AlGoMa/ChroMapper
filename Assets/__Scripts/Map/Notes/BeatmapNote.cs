@@ -82,8 +82,6 @@ public class BeatmapNote : BeatmapObject, IBeatmapObjectBounds
         node["_lineLayer"] = LineLayer;
         node["_type"] = CutDirection < 8 ? 2 : 0;
         node["_cutDirection"] = CutDirection;
-        node["_duration"] = 0; 
-        node["_width"] = 0;
         if (CustomData != null) node["_customData"] = CustomData;
         return node;
     }

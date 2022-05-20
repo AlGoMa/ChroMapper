@@ -60,11 +60,9 @@ public class BeatmapObstacle : BeatmapObject, IBeatmapObjectBounds
         JSONNode node = new JSONObject();
         node["_time"] = Math.Round(Time, DecimalPrecision);
         node["_lineIndex"] = LineIndex;
-        node["_lineLayer"] = 0;
         node["_type"] = 3;
         node["_duration"] = Math.Round(Duration, DecimalPrecision); //Get rid of float precision errors
         node["_width"] = Width;
-        node["_cutDirection"] = 8;
         if (CustomData != null) node["_customData"] = CustomData;
         return node;
     }
