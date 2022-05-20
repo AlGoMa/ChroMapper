@@ -147,10 +147,10 @@ public class ObstaclePlacement : PlacementController<BeatmapObstacle, BeatmapObs
 
             wallTransform.localPosition = new Vector3(
                 wallTransform.localPosition.x - 0.5f,
-                vanillaType * 1.5f,
+                0f,
                 wallTransform.localPosition.z);
 
-            instantiatedContainer.SetScale(new Vector3(1, wallTransform.localPosition.y == 0 ? 3.5f : 2, 0));
+            instantiatedContainer.SetScale(new Vector3(1, wallTransform.localPosition.y == 0 ? 1f : 1f, 0f));
 
             queuedData.CustomData = null;
             queuedData.LineIndex = Mathf.RoundToInt(wallTransform.localPosition.x + 2);
@@ -194,7 +194,7 @@ public class ObstaclePlacement : PlacementController<BeatmapObstacle, BeatmapObs
             instantiatedContainer.ObstacleData = queuedData;
             obstacleAppearanceSo.SetObstacleAppearance(instantiatedContainer);
             instantiatedContainer.transform.localScale = new Vector3(
-                1, instantiatedContainer.transform.localPosition.y == 0 ? 3.5f : 2, 0);
+                1, instantiatedContainer.transform.localPosition.y == 0 ? 1f : 1f, 0f);
         }
         else
         {

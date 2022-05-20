@@ -55,7 +55,7 @@ public class BeatSaberMap
             foreach (var n in Notes) notes.Add(n.ConvertToJson());
 
             var obstacles = new JSONArray();
-            foreach (var o in Obstacles) obstacles.Add(o.ConvertToJson());
+            foreach (var o in Obstacles) notes.Add(o.ConvertToJson());
 
             var bpm = new JSONArray();
             foreach (var b in BpmChanges) bpm.Add(b.ConvertToJson());

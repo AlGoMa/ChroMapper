@@ -60,18 +60,12 @@ public class BeatmapObstacle : BeatmapObject, IBeatmapObjectBounds
         JSONNode node = new JSONObject();
         node["_time"] = Math.Round(Time, DecimalPrecision);
         node["_lineIndex"] = LineIndex;
-        node["_type"] = Type;
+        node["_lineLayer"] = 0;
+        node["_type"] = 3;
         node["_duration"] = Math.Round(Duration, DecimalPrecision); //Get rid of float precision errors
         node["_width"] = Width;
+        node["_cutDirection"] = 8;
         if (CustomData != null) node["_customData"] = CustomData;
-        /*if (Settings.Instance.AdvancedShit) //This will be left commented unless its 100%, absolutely, positively required.
-        {   
-            //By request of Spooky Ghost to determine BeatWalls VS CM walls
-            if (!node["_customData"].HasKey("_editor"))
-            {
-                node["_customData"]["_editor"] = BeatSaberSongContainer.Instance.song.editor;
-            }
-        }*/
         return node;
     }
 
@@ -104,7 +98,7 @@ public class BeatmapObstacle : BeatmapObject, IBeatmapObjectBounds
     {
         var position = LineIndex - 2f; //Line index
         var startHeight = Type == ValueFullBarrier ? 0 : 1.5f;
-        var height = Type == ValueFullBarrier ? 3.5f : 2;
+        var height = Type == ValueFullBarrier ? 1f : 1f;
         float width = Width;
 
         // ME
@@ -117,8 +111,8 @@ public class BeatmapObstacle : BeatmapObject, IBeatmapObjectBounds
 
         if (Type > 1 && Type < 1000)
         {
-            startHeight = Type / (750 / 3.5f); //start height 750 == standard wall height
-            height = 3.5f;
+            startHeight = Type / (750 / 1f); //start height 750 == standard wall height
+            height = 1f;
         }
         else if (Type >= 1000 && Type <= 4000)
         {
